@@ -20,75 +20,105 @@
         <div>
             <h1>Primeiro, seu prato</h1>
             <div class="card-list">
-                <div class="card">
+                <div class="card" data-teste="dish">
                     <img src="/images/frango_yin_yang.png" alt="frango yin yang">
-                    <h1>Frango Yin Yang</h1>
+                    <h1 data-teste="item-name">Frango Yin Yang</h1>
                     <p>Um pouco de batata, um pouco de salada</p>
-                    <strong>R$ 14,90</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 14,90</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-teste="dish">
                     <img src="/images/frango_yin_yang.png" alt="frango yin yang">
-                    <h1>Frango Yin</h1>
+                    <h1 data-teste="item-name">Frango Yin</h1>
                     <p>Um pouco de batata, e a escuridão</p>
-                    <strong>R$ 13,50</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 13,50</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-teste="dish">
                     <img src="/images/frango_yin_yang.png" alt="frango yin yang">
-                    <h1>Frango Yang</h1>
+                    <h1 data-teste="item-name">Frango Yang</h1>
                     <p>Um pouco de batata, e a claridade</p>
-                    <strong>R$ 9,99</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 9,99</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
         <div>
             <h1>Agora, sua bebida</h1>
             <div class="card-list">
-                <div class="card">
+                <div class="card" data-teste="drink">
                     <img src="/images/coca-cola.png" alt="coca-cola">
-                    <h1>Coquinha trincando</h1>
+                    <h1 data-teste="item-name">Coquinha trincando</h1>
                     <p>Lata 350ml</p>
-                    <strong>R$ 14,90</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 14,90</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-teste="drink">
                     <img src="/images/coca-cola.png" alt="coca-cola">
-                    <h1>Coquinha gelada</h1>
+                    <h1 data-teste="item-name">Coquinha gelada</h1>
                     <p>Lata 350ml</p>
-                    <strong>R$ 12,50</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 12,50</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-teste="drink">
                     <img src="/images/coca-cola.png" alt="Coca-Cola">
-                    <h1>Coquinha quente</h1>
+                    <h1 data-teste="item-name">Coquinha quente</h1>
                     <p>Lata 350ml</p>
-                    <strong>R$ 10,00</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 10,00</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
         <div>
             <h1>Por fim, sua sobremesa</h1>
             <div class="card-list">
-                <div class="card">
+                <div class="card" data-teste="dessert">
                     <img src="/images/pudim.png" alt="Pudim">
-                    <h1>Pudim</h1>
+                    <h1 data-teste="item-name">Pudim</h1>
                     <p>Apenas pudim</p>
-                    <strong>R$ 7,90</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 7,90</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-teste="dessert">
                     <img src="/images/pudim.png" alt="Pudim">
-                    <h1>Pudim com granulado</h1>
+                    <h1 data-teste="item-name">Pudim com granulado</h1>
                     <p>Apenas pudim e granulado</p>
-                    <strong>R$ 8,99</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 8,99</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="card" data-teste="dessert">
                     <img src="/images/pudim.png" alt="Pudim">
-                    <h1>Pudim recheado</h1>
+                    <h1 data-teste="item-name">Pudim recheado</h1>
                     <p>Apenas pudim e recheio de nutella</p>
-                    <strong>R$ 15,99</strong>
+                    <div>
+                        <strong data-teste="item-price">R$ 15,99</strong>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-button">
-        <button type="button">Fechar pedido</button>
+        <button data-teste="order-btn" type="button">Fechar pedido</button>
     </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
