@@ -153,6 +153,9 @@
         }
 
         function closeOrder() {
+            const name = prompt('Digite seu nome:');
+            const address = prompt('Digite seu endereço:')
+
             food = activeFoodCard.children[1].innerHTML;
             drink = activeDrinkCard.children[1].innerHTML;
             dessert = activeDessertCard.children[1].innerHTML;
@@ -162,7 +165,7 @@
             priceDessert = activeDessertCard.children[3].children[0].children[0].innerHTML.replace(",",".");
 
             total = (parseFloat(priceFood) + parseFloat(priceDrink) + parseFloat(priceDessert));
-            const text = `Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20pedido%3A%0A-%20Prato%3A%20${food}%0A-%20Bebida%3A%20${drink}%0A-%20Sobremesa%3A%20${dessert}%0ATotal%3A%20R%24%20${total.toFixed(2).replace(".","%2C")}`
+            const text = `Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20pedido%3A%0A-%20Prato%3A%20${food}%0A-%20Bebida%3A%20${drink}%0A-%20Sobremesa%3A%20${dessert}%0ATotal%3A%20R%24%20${total.toFixed(2).replace(".","%2C")}%0D%0A%0D%0ANome%3A%20${name}%0D%0AEndere%C3%A7o%3A%20${address}`
             window.location.href = `https://wa.me/5547988231073?text=${text}`
         }
 
