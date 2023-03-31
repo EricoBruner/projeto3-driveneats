@@ -169,19 +169,23 @@
         function selectFoodCard() {
 			if (activeFoodCard !== null) {
 				activeFoodCard.classList.remove("selected-card");
+                activeFoodCard.children[3].children[1].classList.remove("ion-icon-active");
 			}
 			activeFoodCard = this;
 			activeFoodCard.classList.add("selected-card");
-            
+            activeFoodCard.children[3].children[1].classList.add("ion-icon-active");
+
             activateButton()
 		}
 
         function selectDrinkCard() {
 			if (activeDrinkCard !== null) {
 				activeDrinkCard.classList.remove("selected-card");
+                activeDrinkCard.children[3].children[1].classList.remove("ion-icon-active");
 			}
 			activeDrinkCard = this;
 			activeDrinkCard.classList.add("selected-card");
+            activeDrinkCard.children[3].children[1].classList.add("ion-icon-active");
 
             activateButton()
 		}
@@ -189,9 +193,11 @@
         function selectDessertCard() {
 			if (activeDessertCard !== null) {
 				activeDessertCard.classList.remove("selected-card");
+                activeDessertCard.children[3].children[1].classList.remove("ion-icon-active");
 			}
 			activeDessertCard = this;
 			activeDessertCard.classList.add("selected-card");
+            activeDessertCard.children[3].children[1].classList.add("ion-icon-active");
 
             activateButton()
 		}

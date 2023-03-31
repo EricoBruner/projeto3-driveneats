@@ -135,6 +135,7 @@ body {
 }
 
 .card > div {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -146,6 +147,11 @@ ion-icon {
     height: 19px;
     display: none;
 }
+
+.ion-icon-active {
+    display: flex;
+}
+
 
 .selected-card {
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
