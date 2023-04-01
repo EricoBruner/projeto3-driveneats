@@ -16,6 +16,21 @@
         <h1>DrivenEats</h1>
         <strong>Sua comida em 6 minutos</strong>
     </div>
+    <div class="confirm-order">
+        <div>
+            <h1>Confirme seu pedido</h1>
+            <div class="confirm-order-products">
+                <strong id="confirm-food">vazio</strong><strong class="confirm-order-prices" id="confirm-price-food">vazio</strong>
+                <strong id="confirm-drink">vazio</strong><strong class="confirm-order-prices" id="confirm-price-drink">vazio</strong>
+                <strong id="confirm-dessert">vazio</strong><strong class="confirm-order-prices" id="confirm-price-dessert">vazio</strong>
+                <strong id="strong" >TOTAL</strong><strong class="confirm-order-prices" id="confirm-total">vazio</strong>
+            </div>
+            <div class="confirm-buttons">
+                <button class="button-confirm" onclick="confirmOrder()">Tudo certo, pode pedir!</button>
+                <button class="button-cancel" onclick="cancelOrder()">Cancelar</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div>
             <h1>Primeiro, seu prato</h1>
@@ -140,6 +155,7 @@
     <script>
         document.getElementById("footer-button").disabled = true;
 
+        let textWhatsApp = '';
         let activeFoodCard = null;
         let activeDrinkCard = null;
         let activeDessertCard = null;
@@ -152,21 +168,42 @@
             }
         }
 
+        function confirmOrder() {
+            window.location.href = `https://wa.me/5547988231073?text=${textWhatsApp}`
+        }
+
+        function cancelOrder() {
+            document.querySelector('.confirm-order').classList.remove("active-confirm-order");
+        }
+
         function closeOrder() {
             const name = prompt('Digite seu nome:');
             const address = prompt('Digite seu endereço:')
 
-            food = activeFoodCard.children[1].innerHTML;
-            drink = activeDrinkCard.children[1].innerHTML;
-            dessert = activeDessertCard.children[1].innerHTML;
+            let food = activeFoodCard.children[1].innerHTML;
+            document.getElementById('confirm-food').innerHTML = food;
 
-            priceFood = activeFoodCard.children[3].children[0].children[0].innerHTML.replace(",",".");
-            priceDrink = activeDrinkCard.children[3].children[0].children[0].innerHTML.replace(",",".");
-            priceDessert = activeDessertCard.children[3].children[0].children[0].innerHTML.replace(",",".");
+            let drink = activeDrinkCard.children[1].innerHTML;
+            document.getElementById('confirm-drink').innerHTML = drink;
 
-            total = (parseFloat(priceFood) + parseFloat(priceDrink) + parseFloat(priceDessert));
-            const text = `Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20pedido%3A%0A-%20Prato%3A%20${food}%0A-%20Bebida%3A%20${drink}%0A-%20Sobremesa%3A%20${dessert}%0ATotal%3A%20R%24%20${total.toFixed(2).replace(".","%2C")}%0D%0A%0D%0ANome%3A%20${name}%0D%0AEndere%C3%A7o%3A%20${address}`
-            window.location.href = `https://wa.me/5547988231073?text=${text}`
+            let dessert = activeDessertCard.children[1].innerHTML;
+            document.getElementById('confirm-dessert').innerHTML = dessert;
+
+            let priceFood = activeFoodCard.children[3].children[0].children[0].innerHTML.replace(",",".");
+            document.getElementById('confirm-price-food').innerHTML = priceFood;
+
+            let priceDrink = activeDrinkCard.children[3].children[0].children[0].innerHTML.replace(",",".");
+            document.getElementById('confirm-price-drink').innerHTML = priceDrink;
+
+            let priceDessert = activeDessertCard.children[3].children[0].children[0].innerHTML.replace(",",".");
+            document.getElementById('confirm-price-dessert').innerHTML = priceDessert;
+
+            let total = (parseFloat(priceFood) + parseFloat(priceDrink) + parseFloat(priceDessert));
+            document.getElementById('confirm-total').innerHTML = total.toFixed(2).replace(".",",");
+
+            textWhatsApp = `Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20pedido%3A%0A-%20Prato%3A%20${food}%0A-%20Bebida%3A%20${drink}%0A-%20Sobremesa%3A%20${dessert}%0ATotal%3A%20R%24%20${total.toFixed(2).replace(".","%2C")}%0D%0A%0D%0ANome%3A%20${name}%0D%0AEndere%C3%A7o%3A%20${address}`
+
+            document.querySelector('.confirm-order').classList.add("active-confirm-order");
         }
 
         function selectFoodCard() {
