@@ -16,7 +16,7 @@
         <h1>DrivenEats</h1>
         <strong>Sua comida em 6 minutos</strong>
     </div>
-    <div class="confirm-order">
+    <div class="confirm-order" data-test="confirm-order-modal">
         <div>
             <h1>Confirme seu pedido</h1>
             <div class="confirm-order-products">
@@ -26,8 +26,8 @@
                 <strong id="strong" >TOTAL</strong><strong class="confirm-order-prices" id="confirm-total">vazio</strong>
             </div>
             <div class="confirm-buttons">
-                <button class="button-confirm" onclick="confirmOrder()">Tudo certo, pode pedir!</button>
-                <button class="button-cancel" onclick="cancelOrder()">Cancelar</button>
+                <button data-test="confirm-order-btn" class="button-confirm" onclick="confirmOrder()">Tudo certo, pode pedir!</button>
+                <button data-test="cancel-order-btn" class="button-cancel" onclick="cancelOrder()">Cancelar</button>
             </div>
         </div>
     </div>
